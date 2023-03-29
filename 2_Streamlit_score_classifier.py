@@ -2,11 +2,10 @@
 import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
-#from sklearn.ensemble import RandomForestClassifier
-#from sklearn.model_selection import train_test_split
-#from sklearn import model_selection
-#from sklearn.ensemble import RandomForestClassifier
-#from sklearn.preprocessing import MinMaxScaler 
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn import model_selection
+from sklearn.preprocessing import MinMaxScaler 
 
 # Set Page configuration
 # Read more at https://docs.streamlit.io/1.6.0/library/api-reference/utilities/st.set_page_config
@@ -28,20 +27,20 @@ Front = st.sidebar.slider('Expexted housing payment to income (%)', 0, 20, 100)
 Back = st.sidebar.slider('Total debt to your (%)', 0, 30, 100)
 
 # Split the data into training and testing sets
-#X_train, X_test, y_train, y_test = train_test_split(df[['IncomePerBo','UPB','Amount','Front','Back','First']],
-#                                                    df['BoCreditScore'], test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(df[['IncomePerBo','UPB','Amount','Front','Back','First']],
+                                                    df['BoCreditScore'], test_size=0.2, random_state=42)
 
 # Normalize the data
-#scaler = MinMaxScaler()
-#X_train = scaler.fit_transform(X_train)
-#X_test = scaler.transform(X_test)
+scaler = MinMaxScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
 
 # Train the model using the best hyperparameters
-#model = RandomForestClassifier(n_estimators=50, max_depth=10, min_samples_split=2, random_state=42)
-#model.fit(X_train, y_train)
+model = RandomForestClassifier(n_estimators=50, max_depth=10, min_samples_split=2, random_state=42)
+model.fit(X_train, y_train)
 
 # Make predictions on the testing set
-#y_pred = model.predict(X_test)
+y_pred = model.predict(X_test)
 
 # credit score table
 Score_table = {'Credit Score Group': ['5', '4', '3', '2','1'],
