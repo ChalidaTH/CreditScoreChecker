@@ -41,16 +41,17 @@ Back = st.sidebar.slider('Total debt to your (%)', 0, 30, 100)
 # Make predictions on the testing set
 #y_pred = model.predict(X_test)
 
+# credit score table
+Score_table = {'Credit Score Group': ['5', '4', '3', '2','1'],
+        'Credit Score Category': ['Highest', 'High', 'Medium', 'Low', 'Lowest'],
+        'FICO Credit Score Value': ['>=760', '700-159', '660-659', '621-659','<=620']}
+
 # Display EDA
 st.subheader('Exploratory Data Analysis')
 st.write('The data is grouped by the credit score class and the variable mean is computed for each class.')
 groupby_species_mean = df.groupby('BoCreditScore').mean()
 st.write(groupby_species_mean)
 
-# credit score table
-Score_table = {'Credit Score Group': ['5', '4', '3', '2','1'],
-        'Credit Score Category': ['Highest', 'High', 'Medium', 'Low', 'Lowest'],
-        'FICO Credit Score Value': ['>=760', '700-159', '660-659', '621-659','<=620']}
 
 # Create a Pandas dataframe from the data
 score_df = pd.DataFrame(Score_table)
