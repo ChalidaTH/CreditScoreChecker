@@ -63,4 +63,4 @@ st.table(score_df)
 
 # Print predicted flower species
 st.subheader('Prediction')
-#st.metric('Predicted Credit Score class is :', y_pred[0], '')
+st.metric('Predicted Credit Score class is :', y_pred[0], '')
