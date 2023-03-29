@@ -19,11 +19,11 @@ df = pd.read_csv('loan_streamlit.csv')
 # Set input widgets
 st.sidebar.subheader('Input your credentials')
 First = st.sidebar.slider('First time home owner', 0, 1, 1)
-IncomePerBo = st.sidebar.slider('2. Please select your yearly Income (USD)', 0, 500000, 2500)
-UPB = st.sidebar.slider('3. Please state the current amount of your outstanding debt', 5000,1000000,50000)
-Amount = st.sidebar.slider('4. Please state the amount needed for your housing loan', 10000, 1000000, 70000)
-Front = st.sidebar.slider('5. Please state the expected mortgage principal, interest and housing payment to your income (%)', 0, 20, 100)
-Back = st.sidebar.slider('6. Please state total debt including housing payment to your income (%)', 0, 30, 100)
+IncomePerBo = st.sidebar.slider('Income (USD)', 0, 500000, 2500)
+UPB = st.sidebar.slider('Current amount of outstanding debt', 5000,1000000,50000)
+Amount = st.sidebar.slider('Amount needed for housing loan', 10000, 1000000, 70000)
+Front = st.sidebar.slider('Expexted housing payment to income (%)', 0, 20, 100)
+Back = st.sidebar.slider('Total debt to your (%)', 0, 30, 100)
 
 # Split the data into training and testing sets
 #X_train, X_test, y_train, y_test = train_test_split(df[['IncomePerBo','UPB','Amount','Front','Back','First']],
