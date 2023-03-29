@@ -1,10 +1,10 @@
 # Import Libraries
-import streamlit as st
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn import model_selection
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.preprocessing import MinMaxScaler  # Add this line
+#import streamlit as st
+#import pandas as pd
+#from sklearn.model_selection import train_test_split
+#from sklearn import model_selection
+#from sklearn.ensemble import RandomForestClassifier
+#from sklearn.preprocessing import MinMaxScaler 
 
 # Set Page configuration
 # Read more at https://docs.streamlit.io/1.6.0/library/api-reference/utilities/st.set_page_config
@@ -18,7 +18,7 @@ df = pd.read_csv('loan_streamlit.csv')
 
 # Set input widgets
 st.sidebar.subheader('Input your credentials')
-First = st.sidebar.slider('1. Are you a first time home owner [No=0, Yes=1]?', 0, 1, 1)
+First = st.sidebar.slider('First time home owner', 0, 1, 1)
 IncomePerBo = st.sidebar.slider('2. Please select your yearly Income (USD)', 0, 500000, 2500)
 UPB = st.sidebar.slider('3. Please state the current amount of your outstanding debt', 5000,1000000,50000)
 Amount = st.sidebar.slider('4. Please state the amount needed for your housing loan', 10000, 1000000, 70000)
@@ -26,20 +26,20 @@ Front = st.sidebar.slider('5. Please state the expected mortgage principal, inte
 Back = st.sidebar.slider('6. Please state total debt including housing payment to your income (%)', 0, 30, 100)
 
 # Split the data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(df[['IncomePerBo','UPB','Amount','Front','Back','First']],
+#X_train, X_test, y_train, y_test = train_test_split(df[['IncomePerBo','UPB','Amount','Front','Back','First']],
                                                     df['BoCreditScore'], test_size=0.2, random_state=42)
 
 # Normalize the data
-scaler = MinMaxScaler()
-X_train = scaler.fit_transform(X_train)
-X_test = scaler.transform(X_test)
+#scaler = MinMaxScaler()
+#X_train = scaler.fit_transform(X_train)
+#X_test = scaler.transform(X_test)
 
 # Train the model using the best hyperparameters
-model = RandomForestClassifier(n_estimators=50, max_depth=10, min_samples_split=2, random_state=42)
-model.fit(X_train, y_train)
+#model = RandomForestClassifier(n_estimators=50, max_depth=10, min_samples_split=2, random_state=42)
+#model.fit(X_train, y_train)
 
 # Make predictions on the testing set
-y_pred = model.predict(X_test)
+#y_pred = model.predict(X_test)
 
 # Display EDA
 st.subheader('Exploratory Data Analysis')
@@ -62,4 +62,4 @@ st.table(score_df)
 
 # Print predicted flower species
 st.subheader('Prediction')
-st.metric('Predicted Credit Score class is :', y_pred[0], '')
+#st.metric('Predicted Credit Score class is :', y_pred[0], '')
