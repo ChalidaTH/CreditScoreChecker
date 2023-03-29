@@ -46,7 +46,6 @@ st.subheader('Exploratory Data Analysis')
 st.write('The data is grouped by the credit score class and the variable mean is computed for each class.')
 groupby_species_mean = df.groupby('BoCreditScore').mean()
 st.write(groupby_species_mean)
-st.bar_chart(groupby_species_mean.T)
 
 # credit score table
 Score_table = {'Credit Score Group': ['5', '4', '3', '2','1'],
