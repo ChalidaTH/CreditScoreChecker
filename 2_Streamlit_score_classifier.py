@@ -27,7 +27,7 @@ Back = st.sidebar.slider('6. Please state total debt including housing payment t
 
 # Split the data into training and testing sets
 #X_train, X_test, y_train, y_test = train_test_split(df[['IncomePerBo','UPB','Amount','Front','Back','First']],
-                                                    df['BoCreditScore'], test_size=0.2, random_state=42)
+#                                                    df['BoCreditScore'], test_size=0.2, random_state=42)
 
 # Normalize the data
 #scaler = MinMaxScaler()
