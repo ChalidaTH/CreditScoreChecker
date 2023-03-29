@@ -26,23 +26,23 @@ Front = st.sidebar.slider('5. Please state the expected mortgage principal, inte
 Back = st.sidebar.slider('6. Please state total debt including housing payment to your income (%)', 0, 30, 100)
 
 # Separate to X and y
-X = df.drop('BoCreditScore', axis=1)
-y = df.BoCreditScore
+#X = df.drop('BoCreditScore', axis=1)
+#y = df.BoCreditScore
 
 # Split data
-X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, test_size=0.2, random_state=42)
+#X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Normalize the data
-scaler = MinMaxScaler()
-X_train = scaler.fit_transform(X_train)
-X_test = scaler.transform(X_test)
+#scaler = MinMaxScaler()
+#X_train = scaler.fit_transform(X_train)
+#X_test = scaler.transform(X_test)
 
 # Build model
-model = RandomForestClassifier(n_estimators=50, max_depth=10, min_samples_split=2, random_state=42)
-model.fit(X_train, y_train)
+#model = RandomForestClassifier(n_estimators=50, max_depth=10, min_samples_split=2, random_state=42)
+#model.fit(X_train, y_train)
 
 # Generate prediction based on user selected attributes
-y_pred = model.predict([[IncomePerBo, UPB, Amount, Front, Back, First]])
+#y_pred = model.predict([[IncomePerBo, UPB, Amount, Front, Back, First]])
 
 # Display EDA
 # st.subheader('Exploratory Data Analysis')
@@ -65,4 +65,4 @@ st.table(score_df)
 
 # Print predicted flower species
 st.subheader('Prediction')
-st.metric('Predicted Credit Score class is :', y_pred[0], '')
+#st.metric('Predicted Credit Score class is :', y_pred[0], '')
