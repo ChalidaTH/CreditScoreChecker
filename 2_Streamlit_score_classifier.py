@@ -57,7 +57,7 @@ st.write(groupby_species_mean)
 score_df = pd.DataFrame(Score_table)
 
 # Display the dataframe in a table using Streamlit
-st.table(score_df, index=False)
+st.table(score_df)
 
 
 # Print predicted flower species
