@@ -4,6 +4,7 @@ import pandas as pd
 from sklearn import model_selection
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import MinMaxScaler
 
 # Set Page configuration
 # Read more at https://docs.streamlit.io/1.6.0/library/api-reference/utilities/st.set_page_config
@@ -44,11 +45,11 @@ model.fit(X_train, y_train)
 y_pred = model.predict([[IncomePerBo, UPB, Amount, Front, Back, First]])
 
 # Display EDA
-st.subheader('Exploratory Data Analysis')
-st.write('The data is grouped by the credit score class and the variable mean is computed for each class.')
-groupby_species_mean = df.groupby('BoCreditScore').mean()
-st.write(groupby_species_mean)
-st.bar_chart(groupby_species_mean.T)
+# st.subheader('Exploratory Data Analysis')
+# st.write('The data is grouped by the credit score class and the variable mean is computed for each class.')
+# groupby_species_mean = df.groupby('BoCreditScore').mean()
+# st.write(groupby_species_mean)
+# st.bar_chart(groupby_species_mean.T)
 
 # credit score table
 Score_table = {'Credit Score Group': ['5', '4', '3', '2','1'],
