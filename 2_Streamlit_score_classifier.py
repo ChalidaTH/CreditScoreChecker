@@ -17,9 +17,9 @@ df = pd.read_csv('loan_streamlit.csv')
 # Set input widgets
 st.sidebar.subheader('Input your credentials')
 First = st.sidebar.slider('1. Are you a first time home owner [No=0, Yes=1]?', 0, 1, 1)
-IncomePerBo = st.sidebar.slider('2. Please select your yearly Income (USD)', , , )
-UPB = st.sidebar.slider('3. Please state the current amount of your outstanding debt', 10,100,50)
-Amount = st.sidebar.slider('4. Please state the amount needed for your housing loan', 4.3, 7.9, 5.8)
+IncomePerBo = st.sidebar.slider('2. Please select your yearly Income (USD)', 0, 500000, 2500)
+UPB = st.sidebar.slider('3. Please state the current amount of your outstanding debt', 5000,1000000,50000)
+Amount = st.sidebar.slider('4. Please state the amount needed for your housing loan', 10000, 1000000, 70000)
 Front = st.sidebar.slider('5. Please state the expected mortgage principal, interest and housing payment to your income (%)', 0, 20, 100)
 Back = st.sidebar.slider('6. Please state total debt including housing payment to your income (%)', 0, 30, 100)
 
