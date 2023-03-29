@@ -1,10 +1,10 @@
 # Import Libraries
 import streamlit as st
 import pandas as pd
-from sklearn import model_selection
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.preprocessing import MinMaxScaler
+#from sklearn import model_selection
+#from sklearn.model_selection import train_test_split
+#from sklearn.ensemble import RandomForestClassifier
+#from sklearn.preprocessing import MinMaxScaler
 
 # Set Page configuration
 # Read more at https://docs.streamlit.io/1.6.0/library/api-reference/utilities/st.set_page_config
