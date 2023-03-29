@@ -1,6 +1,6 @@
 # Import Libraries
-#import streamlit as st
-#import pandas as pd
+import streamlit as st
+import pandas as pd
 #from sklearn.model_selection import train_test_split
 #from sklearn import model_selection
 #from sklearn.ensemble import RandomForestClassifier
@@ -8,7 +8,7 @@
 
 # Set Page configuration
 # Read more at https://docs.streamlit.io/1.6.0/library/api-reference/utilities/st.set_page_config
-#st.set_page_config(page_title='Credit Score checker for housing loan', page_icon='🏘️', layout='wide', initial_sidebar_state='expanded')
+st.set_page_config(page_title='Credit Score checker for housing loan', page_icon='🏘️', layout='wide', initial_sidebar_state='expanded')
 
 # Set title of the app
 st.title('🏘️ Credit Score self-checker for housing loan')
