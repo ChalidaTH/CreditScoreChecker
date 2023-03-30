@@ -25,15 +25,15 @@ col1, col2, col3 = st.columns(3)
 
 with col1:  
     First = st.slider('First time home owner (0=No, 1=Yes)', 0, 1,1)
-    IncomePerBo = st.slider('Income (USD)', 0, 500000, 2500)
+    IncomePerBo = st.slider('Income (USD)', 0, 500000, 1300)
 
 with col2:
-    UPB = st.slider('Current amount of outstanding debt', 5000,1000000,50000)
-    Amount = st.slider('Amount needed for housing loan', 10000, 1000000, 70000)
+    UPB = st.slider('Current amount of outstanding debt', 5000,1000000,18000)
+    Amount = st.slider('Amount needed for housing loan', 10000, 1000000, 180000)
     
 with col3:
-    Front = st.slider('Expexted housing payment to income (%)', 0, 100, 20)
-    Back = st.slider('Total debt to your income (%)', 0, 100, 30)
+    Front = st.slider('Expexted housing payment to income (%)', 0, 100, 13)
+    Back = st.slider('Total debt to your income (%)', 0, 100, 18)
 
 # Load data
 df = pd.read_csv('loan_streamlit.csv')
