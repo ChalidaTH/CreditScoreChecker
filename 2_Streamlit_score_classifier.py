@@ -55,7 +55,7 @@ Score_table = {'Credit Score Group': ['5', '4', '3', '2','1'],
 score_df = pd.DataFrame(Score_table)
 
 # Display the dataframe in a table using Streamlit
-st.table(score_df, index=None)
+st.table(score_df)
 
 # Display EDA
 st.subheader('Average value in each class')
