@@ -26,6 +26,10 @@ Amount = st.slider('Amount needed for housing loan', 10000, 1000000, 70000)
 Front = st.slider('Expexted housing payment to income (%)', 0, 100, 20)
 Back = st.slider('Total debt to your (%)', 0, 100, 30)
 
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(df[['IncomePerBo','UPB','Amount','Front','Back','First']],
+                                                    df['BoCreditScore'], test_size=0.2, random_state=42)
+
 # Normalize the data
 scaler = MinMaxScaler()
 X_train = scaler.fit_transform(X_train)
@@ -44,7 +48,6 @@ score_df = pd.DataFrame(Score_table)
 # Display the dataframe in a table using Streamlit
 st.table(score_df)
 
-
 # Print predicted flower species
 st.subheader('Prediction')
 st.metric('Predicted Credit Score class is :', y_pred[0], '')
@@ -53,10 +56,6 @@ st.metric('Predicted Credit Score class is :', y_pred[0], '')
 Score_table = {'Credit Score Group': ['5', '4', '3', '2','1'],
         'Credit Score Category': ['Highest', 'High', 'Medium', 'Low', 'Lowest'],
         'FICO Credit Score Value': ['>=760', '700-159', '660-659', '621-659','<=620']}
-
-# Split the data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(df[['IncomePerBo','UPB','Amount','Front','Back','First']],
-                                                    df['BoCreditScore'], test_size=0.2, random_state=42)
 
 # Display EDA
 st.subheader('Exploratory Data Analysis')
