@@ -2,10 +2,10 @@
 import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
-#from sklearn.ensemble import RandomForestClassifier
-#from sklearn import model_selection
-#from sklearn.preprocessing import MinMaxScaler 
-from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn import model_selection
+from sklearn.preprocessing import MinMaxScaler 
 
 # Set Page configuration
 # Read more at https://docs.streamlit.io/1.6.0/library/api-reference/utilities/st.set_page_config
@@ -26,21 +26,21 @@ Amount = st.sidebar.slider('Amount needed for housing loan', 10000, 1000000, 700
 Front = st.sidebar.slider('Expexted housing payment to income (%)', 0, 100, 20)
 Back = st.sidebar.slider('Total debt to your (%)', 0, 100, 30)
 
-# Create feature matrix (X).
-X = df[['IncomePerBo','UPB','First', 'Amount', 'Front', 'Back']]
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(df[['IncomePerBo','UPB','Amount','Front','Back','First']],
+                                                    df['BoCreditScore'], test_size=0.2, random_state=42)
 
-# Create response vector (y).
-y = df.BoCreditScore
+# Normalize the data
+scaler = MinMaxScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
 
-# Define the model and fit the training data
-gbc = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
-gbc.fit(X_train, y_train)
+# Train the model using the best hyperparameters
+model = RandomForestClassifier(n_estimators=50, max_depth=10, min_samples_split=2, random_state=42)
+model.fit(X_train, y_train)
 
-# Make predictions on the testing data
-y_pred = gbc.predict(X_test)
-
-# Use the trained model to make predictions on the training dataset
-y_pred_train = gbc.predict(X_train)
+# Make predictions on the testing set
+y_pred = model.predict(X_test)
 
 # credit score table
 Score_table = {'Credit Score Group': ['5', '4', '3', '2','1'],
