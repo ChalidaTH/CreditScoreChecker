@@ -21,7 +21,7 @@ IncomePerBo = st.slider('Income (USD)', 0, 500000, 2500)
 UPB = st.slider('Current amount of outstanding debt', 5000,1000000,50000)
 Amount = st.slider('Amount needed for housing loan', 10000, 1000000, 70000)
 Front = st.slider('Expexted housing payment to income (%)', 0, 100, 20)
-Back = st.slider('Total debt to your (%)', 0, 100, 30)
+Back = st.slider('Total debt to your income (%)', 0, 100, 30)
 
 # Load data
 df = pd.read_csv('loan_streamlit.csv')
@@ -55,7 +55,7 @@ Score_table = {'Credit Score Group': ['5', '4', '3', '2','1'],
 score_df = pd.DataFrame(Score_table)
 
 # Display the dataframe in a table using Streamlit
-st.table(score_df)
+st.table(score_df, index=None)
 
 # Display EDA
 st.subheader('Average value in each class')
