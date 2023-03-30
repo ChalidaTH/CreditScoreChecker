@@ -58,7 +58,7 @@ score_df = pd.DataFrame(Score_table)
 st.table(score_df)
 
 # Display EDA
-st.subheader('Exploratory Data Analysis')
+st.subheader('Average value in each class')
 st.write('The data is grouped by the credit score class and the variable mean is computed for each class.')
 groupby_species_mean = df.groupby('BoCreditScore').mean()
 st.write(groupby_species_mean)
