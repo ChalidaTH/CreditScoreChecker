@@ -75,6 +75,9 @@ groupby_species_mean = groupby_species_mean.rename(columns={
     "IncomePerBo": "Income",
     "UPB": "Unpaid loan balance",
     "Amount": "Housing loan amount"
+    "Front": "Housing payment to income ratio",
+    "Back": "Debt payment to income ratio",
+    "First": "First time home owner"
 })
 
 st.write(groupby_species_mean)
