@@ -20,7 +20,6 @@ st.subheader('Input your credentials')
 col1, col2, col3 = st.columns(3)
 
 with col1:  
-    st.selectbox
     First = st.selectbox('First time home owner', 0, 1)
     IncomePerBo = st.slider('Income (USD)', 0, 500000, 2500)
 
