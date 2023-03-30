@@ -23,10 +23,12 @@ with col1:
     IncomePerBo = st.slider('Income (USD)', 0, 500000, 2500)
 
 with col2:
+    st.subheader(' ')
     UPB = st.slider('Current amount of outstanding debt', 5000,1000000,50000)
     Amount = st.slider('Amount needed for housing loan', 10000, 1000000, 70000)
     
 with col3:
+    st.subheader(' ')
     Front = st.slider('Expexted housing payment to income (%)', 0, 100, 20)
     Back = st.slider('Total debt to your income (%)', 0, 100, 30)
 
