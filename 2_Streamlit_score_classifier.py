@@ -14,6 +14,9 @@ st.set_page_config(page_title='Credit Score checker for housing loan', page_icon
 # Set title of the app
 st.title('🏘️ Credit Score self-checker for housing loan')
 
+image = Image.open('house.jpg')
+st.image(image, caption='Mortgage Loan')
+
 # Set input widgets
 st.subheader('Input your credentials')
 
