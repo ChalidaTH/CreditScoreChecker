@@ -15,10 +15,11 @@ st.set_page_config(page_title='Credit Score checker for housing loan', page_icon
 st.title('🏘️ Credit Score self-checker for housing loan')
 
 # Set input widgets
+st.subheader('Input your credentials')
+
 col1, col2, col3 = st.columns(3)
 
-with col1:
-    st.subheader('Input your credentials')
+with col1:  
     First = st.slider('First time home owner', 0, 1, 1)
     IncomePerBo = st.slider('Income (USD)', 0, 500000, 2500)
 
