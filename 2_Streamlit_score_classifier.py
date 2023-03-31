@@ -36,8 +36,8 @@ with col3:
     Front = st.slider('Expexted housing payment to income (%)', 0, 100, 13)
     Back = st.slider('Total debt to your income (%)', 0, 100, 18)
 
-# load the saved model
-model = load_model('model')
+# load the model from disk
+model = pickle.load(open('model.pkl', 'rb'))
     
 # Make predictions on the testing set
 y_pred = model.predict(X_test)
