@@ -8,6 +8,7 @@ from sklearn import model_selection
 from sklearn.preprocessing import MinMaxScaler 
 from PIL import Image
 import pickle
+from sklearn.ensemble import GradientBoostingClassifier
 
 # Set Page configuration
 # Read more at https://docs.streamlit.io/1.6.0/library/api-reference/utilities/st.set_page_config
