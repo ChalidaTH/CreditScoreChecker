@@ -85,4 +85,4 @@ st.table(score_df)
     "First": "First time home owner"
 })
 '''
-st.write(groupby_species_mean)
+#st.write(groupby_species_mean)
