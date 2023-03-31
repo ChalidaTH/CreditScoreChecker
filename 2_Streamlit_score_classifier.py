@@ -3,7 +3,6 @@ import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
 from sklearn import model_selection
 from sklearn.preprocessing import MinMaxScaler 
 from PIL import Image
@@ -48,6 +47,7 @@ model = pickle.load(open('model.pkl', 'rb'))
     
 # data frame of userinput
 input_df = pd.DataFrame({'IncomePerBo':[IncomePerBo], 'UPB':[UPB], 'First': [First], 'Amount':[Amount], 'Front':[Front], 'Back':[Back] })
+st.write(input_df)
 
 #['IncomePerBo','UPB','First', 'Amount', 'Front', 'Back']
     
