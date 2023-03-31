@@ -70,13 +70,13 @@ score_df = pd.DataFrame(Score_table)
 # Display the dataframe in a table using Streamlit
 st.table(score_df)
 
-st.subheader('Average value in each class')
-st.write('The data is grouped by the credit score class and the variable mean is computed for each class.')
-groupby_species_mean = df.groupby('BoCreditScore').mean().applymap("{:,.0f}".format)
+#st.subheader('Average value in each class')
+#st.write('The data is grouped by the credit score class and the variable mean is computed for each class.')
+#groupby_species_mean = df.groupby('BoCreditScore').mean().applymap("{:,.0f}".format)
 
 # Rename the columns
-groupby_species_mean = groupby_species_mean.rename(columns={
-    "BoCreditScore": "Borrowers' credit score",
+'''groupby_species_mean = groupby_species_mean.rename(columns={
+   "BoCreditScore": "Borrowers' credit score",
     "IncomePerBo": "Income",
     "UPB": "Unpaid loan balance",
     "Amount": "Housing loan amount",
@@ -84,5 +84,5 @@ groupby_species_mean = groupby_species_mean.rename(columns={
     "Back": "Debt payment to income ratio",
     "First": "First time home owner"
 })
-
+'''
 st.write(groupby_species_mean)
