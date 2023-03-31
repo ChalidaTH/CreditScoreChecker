@@ -35,22 +35,9 @@ with col3:
     Front = st.slider('Expexted housing payment to income (%)', 0, 100, 13)
     Back = st.slider('Total debt to your income (%)', 0, 100, 18)
 
-# Load data
-df = pd.read_csv('loan_streamlit.csv')
-
-# Split the data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(df[['IncomePerBo','UPB','Amount','Front','Back','First']],
-                                                    df['BoCreditScore'], test_size=0.2, random_state=42)
-
-# Normalize the data
-scaler = MinMaxScaler()
-X_train = scaler.fit_transform(X_train)
-X_test = scaler.transform(X_test)
-
-# Train the model using the best hyperparameters
-model = RandomForestClassifier(n_estimators=50, max_depth=10, min_samples_split=2, random_state=42)
-model.fit(X_train, y_train)
-
+# load the saved model
+model = load_model('model')
+    
 # Make predictions on the testing set
 y_pred = model.predict(X_test)
 
