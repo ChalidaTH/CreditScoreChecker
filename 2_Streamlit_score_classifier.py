@@ -35,16 +35,24 @@ with col2:
 with col3:
     Front = st.slider('Expexted housing payment to income (%)', 0, 100, 13)
     Back = st.slider('Total debt to your income (%)', 0, 100, 18)
-
+    
+submitted = st.button('Submit')
+    
 # load the model from disk
 model = pickle.load(open('model.pkl', 'rb'))
     
+# data frame of userinput
+input_df = pd.DataFrame({'IncomePerBo':[IncomePerBo], 'UPB':[UPB], 'First': [First], 'Amount':[Amount], 'Front':[Front], 'Back':[Back] })
+
+#['IncomePerBo','UPB','First', 'Amount', 'Front', 'Back']
+    
 # Make predictions on the testing set
-y_pred = model.predict(X_test)
+y_pred = model.predict(input_df)
 
 # Print predicted flower species
 st.subheader('Prediction')
-st.metric('Predicted Credit Score class is :', y_pred[0], '')
+if submitted:
+    st.metric('Predicted', y_pred[0])
 
 # credit score table
 Score_table = {'Credit Score Group': ['5', '4', '3', '2','1'],
