@@ -25,7 +25,7 @@ st.subheader('Input your credentials')
 col1, col2, col3 = st.columns(3)
 
 with col1:  
-    IncomePerBo = st.slider('Income (USD)', 0, 500000, 1300)
+    IncomePerBo = st.slider('Annual Income (USD)', 0, 500000, 1300)
     First = st.radio("First time home owner",('Yes', 'No'))
     if First == 'Yes':
         First = 1
@@ -37,7 +37,7 @@ with col2:
     Amount = st.slider('Amount needed for housing loan', 10000, 1000000, 180000)
     
 with col3:
-    Front = st.slider('Expexted housing payment to income (%)', 0, 100, 13)
+    Front = st.slider('Expected housing payment to income (%)', 0, 100, 13)
     Back = st.slider('Total debt to your income (%)', 0, 100, 18)
     
 submitted = st.button('Submit')
@@ -54,8 +54,8 @@ st.write(input_df)
 # Make predictions on the testing set
 y_pred = model.predict(input_df)
 
-# Print predicted flower species
-st.subheader('Prediction')
+# Print predicted 
+st.subheader('Prediction on your credit score')
 if submitted:
     st.metric('Predicted', y_pred[0])
 
