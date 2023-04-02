@@ -25,7 +25,7 @@ st.subheader('Input your credentials')
 col1, col2, col3 = st.columns(3)
 
 with col1:  
-    IncomePerBo = st.slider('Annual Income (USD)', 0, 500000, 1300)
+    IncomePerBo = st.number_input('Insert annual Income (USD)')
     First = st.radio("First time home owner",('Yes', 'No'))
     if First == 'Yes':
         First = 1
