@@ -33,12 +33,12 @@ with col1:
         First = 0
     
 with col2:
-    UPB = st.slider('Current amount of outstanding debt', 5000,1000000,18000)
-    Amount = st.slider('Amount needed for housing loan', 10000, 1000000, 180000)
+    UPB = st.number_input('Current amount of outstanding debt')
+    Amount = st.number_input('Amount needed for housing loan')
     
 with col3:
-    Front = st.slider('Expected housing payment to income (%)', 0, 100, 13)
-    Back = st.slider('Total debt to your income (%)', 0, 100, 18)
+    Front = st.number_input('Expected housing payment to income (%)')
+    Back = st.number_input('Total debt to your income (%)')
     
 submitted = st.button('Submit')
     
